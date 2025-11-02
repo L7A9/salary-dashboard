@@ -2,12 +2,14 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
 
 st.set_page_config(page_title="Salary Dashboard", layout="centered")
 st.title("Salary Data Analysis (Test Dataset)")
 
 
-df = pd.read_csv('model_results.csv')
+BASE_DIR = Path(__file__).parent  # folder of this script
+df_path = BASE_DIR / "model_results.csv"
 
 st.markdown("### Data Preprocessing Explanation")
 st.markdown("""
