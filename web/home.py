@@ -155,6 +155,8 @@ st.markdown("---")
 st.subheader("Go to the Prediction Page")
 st.page_link("pages/prediction.py", label="Open Salary Predictor")
 
+
+st.markdown("---")
 st.markdown("Developed by Amine EL Hanine | Data Science student & Salary Prediction Dashboard | 2025, [Github](https://github.com/L7A9)")
 
 
