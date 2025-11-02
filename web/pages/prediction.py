@@ -33,3 +33,8 @@ input_df = pd.DataFrame({
 if st.button("Predict"):
     prediction = pipeline.predict(input_df)
     st.success(f"Predicted value: {prediction[0]:.2f}")
+
+
+
+st.markdown("---")
+st.markdown("Developed by Amine EL Hanine | Data Science student & Salary Prediction Dashboard | 2025, [Github](https://github.com/L7A9)")
