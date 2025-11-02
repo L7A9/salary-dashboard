@@ -1,10 +1,13 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from pathlib import Path
 
-# Load your trained pipeline
-with open("salary_pipeline.pkl", "rb") as f:
-    pipeline = joblib.load(f)
+
+BASE_DIR = Path(__file__).parent  # folder of this script
+model_path = BASE_DIR / "salary_pipeline.pkl"
+
+pipeline = joblib.load(model_path)
 
 st.title("Salary Prediction App")  # Example title
 
