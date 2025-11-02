@@ -1,0 +1,32 @@
+import streamlit as st
+import pandas as pd
+import joblib
+
+# Load your trained pipeline
+with open("salary_pipeline.pkl", "rb") as f:
+    pipeline = joblib.load(f)
+
+st.title("Salary Prediction App")  # Example title
+
+st.header("Enter Employee Details:")
+
+# Input widgets
+age = st.number_input("Age", min_value=18, max_value=100, value=30)
+gender = st.selectbox("Gender", ["Male", "Female"])
+education_level = st.selectbox("Education Level", ["Bachelor's", "Master's", "PhD"])
+job_title = st.text_input("Job Title", "Software Engineer")  # could also be a selectbox if you have known titles
+years_of_experience = st.number_input("Years of Experience", min_value=0, max_value=50, value=5)
+
+# Make a DataFrame for the input (pipeline expects a DataFrame)
+input_df = pd.DataFrame({
+    "age": [age],
+    "gender": [gender],
+    "education level": [education_level],
+    "job title": [job_title],
+    "years of experience": [years_of_experience]
+})
+
+# Button to predict
+if st.button("Predict"):
+    prediction = pipeline.predict(input_df)
+    st.success(f"Predicted value: {prediction[0]:.2f}")
