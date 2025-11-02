@@ -10,6 +10,7 @@ st.title("Salary Data Analysis (Test Dataset)")
 
 BASE_DIR = Path(__file__).parent  # folder of this script
 df_path = BASE_DIR / "model_results.csv"
+df = pd.read_csv(df_path)
 
 st.markdown("### Data Preprocessing Explanation")
 st.markdown("""
