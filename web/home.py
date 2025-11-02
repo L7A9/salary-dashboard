@@ -155,25 +155,6 @@ st.markdown("---")
 st.subheader("Go to the Prediction Page")
 st.page_link("pages/prediction.py", label="Open Salary Predictor")
 
-st.markdown(
-    """
-    <style>
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        font-size: 12px;
-    }
-    </style>
+st.markdown("Developed by Amine EL Hanine | Data Science student & Salary Prediction Dashboard | 2025, [Github](https://github.com/L7A9)")
 
-    <div class="footer">
-        Developed by Amine EL Hanine | Data Science student & Salary Prediction Dashboard | 2025
-        <a href="https://github.com/L7A9" target="_blank">GitHub</a>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 
