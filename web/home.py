@@ -10,18 +10,17 @@ st.title("Salary Data Analysis (Test Dataset)")
 
 BASE_DIR = Path(__file__).parent  # folder of this script
 df_path = BASE_DIR / "model_results.csv"
-
 df = pd.read_csv(df_path)
 
 st.markdown("### Data Preprocessing Explanation")
 st.markdown("""
-1. **Gender and Education Level:** These columns are categorical but have a natural order (education) or binary options (gender). We used **Ordinal Encoding** to convert them into numeric values that the model can understand. For education level, this preserves the hierarchy (Bachelor < Master < PhD), and for gender, it converts it to 0/1.
+1. **Gender and Education Level:** These columns are categorical but have a natural order (education) or binary options (gender). I used **Ordinal Encoding** to convert them into numeric values that the model can understand. For education level, this preserves the hierarchy (Bachelor < Master < PhD), and for gender, it converts it to 0/1.
 """)
 st.markdown("""
-2. **Job Title:** Since job titles have many unique categories, we used **Target Encoding**. This replaces each job title with the **average salary** for that role. It helps the model understand the impact of each job on salary without creating hundreds of columns.
+2. **Job Title:** Since job titles have many unique categories, I used **Target Encoding**. This replaces each job title with the **average salary** for that role. It helps the model understand the impact of each job on salary without creating hundreds of columns.
 """)
 st.markdown("""
-3. **Age and Years of Experience:** These are numeric features, but on different scales. We applied **Standard Scaling** to transform them to have a **mean of 0 and standard deviation of 1**. This ensures the model treats all numeric features equally and improves training stability.
+3. **Age and Years of Experience:** These are numeric features, but on different scales. I applied **Standard Scaling** to transform them to have a **mean of 0 and standard deviation of 1**. This ensures the model treats all numeric features equally and improves training stability.
 """)
 
 st.markdown("### Before Scaling and Encoding")
@@ -156,25 +155,8 @@ st.markdown("---")
 st.subheader("Go to the Prediction Page")
 st.page_link("pages/prediction.py", label="Open Salary Predictor")
 
-st.markdown(
-    """
-    <style>
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        font-size: 12px;
-    }
-    </style>
 
-    <div class="footer">
-        Developed by Amine EL Hanine | Data Science student & Salary Prediction Dashboard | 2025
-        <a href="https://github.com/L7A9" target="_blank">GitHub</a>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("---")
+st.markdown("Developed by Amine EL Hanine | Data Science student | Salary Prediction Dashboard | 2025, [Github](https://github.com/L7A9)")
+
 
