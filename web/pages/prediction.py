@@ -32,7 +32,7 @@ input_df = pd.DataFrame({
 # Button to predict
 if st.button("Predict"):
     prediction = pipeline.predict(input_df)
-    st.success(f"Predicted value: {prediction[0]:.2f}")
+    st.success(f"Predicted value: {prediction[0]:.2f} $ per year")
 
 st.subheader("Go to the Home Page")
 st.page_link("home.py", label="Home")
