@@ -35,7 +35,7 @@ if st.button("Predict"):
     st.success(f"Predicted value: {prediction[0]:.2f}")
 
 st.subheader("Go to the Home Page")
-st.page_link("../home.py", label="Open Salary Predictor")
+st.page_link("home.py", label="Open Salary Predictor")
 
 
 st.markdown("---")
